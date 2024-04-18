@@ -43,6 +43,7 @@
             <tr>
                 <th>No</th>
                 <th>Nama Produk</th>
+                <th>Foto Produk</th>
                 <th>Jumlah</th>
                 <th>Subtotal</th>
             </tr>

@@ -3,8 +3,8 @@
 <body class="ol">
     <section class="container">
         <br>
-        <h4 class="text-white"> <b>Transaksi Penjualan</b></h4>
-        <hr class="text-white">
+        <h4 class="text-black"> <b>Transaksi Penjualan</b></h4>
+        <hr class="text-black">
                         <form method="POST" action="{{ route('penjualan.store') }}">
                             @csrf
 
@@ -29,7 +29,7 @@
                                     <select id="pelanggan_id" class="form-control @error('pelanggan_id') is-invalid @enderror" name="pelanggan_id" required>
                                         <option value="">Pilih Pelanggan</option>
                                         @foreach ($pelanggan as $p)
-                                            <option class="text-white" value="{{ $p->id }}"  {{ old('pelanggan_id') == $p->id ? 'selected' : '' }} >{{ $p->nama_pelanggan }}</option>
+                                            <option class="text-black" value="{{ $p->id }}"  {{ old('pelanggan_id') == $p->id ? 'selected' : '' }} >{{ $p->nama_pelanggan }}</option>
                                         @endforeach
                                     </select>
 
@@ -46,11 +46,11 @@
                                 <div class="input-box">
                                     <label for="produk_id" class="col-md-4 col-form-label text-md-right">{{ __('Produk') }}</label>
                                     
-                                    <div class="col-md-4 text-white" >
+                                    <div class="col-md-4 text-black" >
                                         <select id="produk_id" class="form-control @error('detail.*.produk_id') is-invalid @enderror" name="detail[0][produk_id]" required>
                                             <option value="">Pilih Produk</option>
                                             @foreach ($produks as $produk)
-                                            <option class="text-white" value="{{ $produk->id }}" {{ old('detail.0.produk_id') == $produk->id ? 'selected' : '' }}>{{ $produk->nama_produk }}</option>
+                                            <option class="text-black" value="{{ $produk->id }}" {{ old('detail.0.produk_id') == $produk->id ? 'selected' : '' }}>{{ $produk->nama_produk }}</option>
                                             @endforeach
                                         </select>
                                         

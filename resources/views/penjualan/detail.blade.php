@@ -8,7 +8,8 @@
         <hr class="text-white">
     </div>
     <div class="icons" style="display: flex; justify-content: flex-end;">
-        <a href="/pelanggan" class="icon text-decoration-none">Export Penjualan (.xlsx)</a>  &nbsp; &nbsp; &nbsp;
+        <a href="{{route('penjualan.excel')}}" class="icon text-decoration-none">Export Penjualan (.xlsx)</a>  &nbsp; &nbsp; &nbsp;
+        <a href="/penjualan" class="icon text-decoration-none">Tambah Penjualan</a> &nbsp; &nbsp; &nbsp;
         @if(Auth::check() && Auth::user()->role == 'kasir')
         <a href="/penjualan" class="icon text-decoration-none">Tambah Penjualan</a> &nbsp; &nbsp; &nbsp;
         <a href="/pelanggan" class="icon text-decoration-none">Tambah Pelanggan</a>
@@ -29,11 +30,11 @@
         {{-- @foreach ($mergedDetails as $index => $detail) --}}
         {{-- @foreach($detail['items'] as $item) --}}
             <tr class="table-rows">
-                <td class="text-white">{{ $index +1 }}</td>
-                <td class="text-white">{{ $pelanggan['penjualan']['pelanggan']['nama_pelanggan']}}</td>
-                <td class="text-white">{{ $pelanggan['penjualan']['tanggal_penjualan']}}</td>
-                <td class="text-white">Rp {{ number_format( $pelanggan['subtotal'], 0, ',', '.') }}</td>
-                <td class="text-white">Kasir</td>
+                <td class="text-black">{{ $index +1 }}</td>
+                <td class="text-black">{{ $pelanggan['penjualan']['pelanggan']['nama_pelanggan']}}</td>
+                <td class="text-black">{{ $pelanggan['penjualan']['tanggal_penjualan']}}</td>
+                <td class="text-black">Rp {{ number_format( $pelanggan['subtotal'], 0, ',', '.') }}</td>
+                <td class="text-black">Kasir</td>
                 <td class="d-flex gap-2 text-white">
                     <a href="" class="btn btn-warning">Lihat</a>
                     <a href="{{ url('/penjualan/' . $pelanggan->id . '/download-pdf') }}" class="btn btn-primary">Unduh Bukti</a>

@@ -34,7 +34,9 @@ class ProdukController extends Controller
 
         $fileFoto = $request->file('foto_produk');
         $foto_produk = time().'.'.$fileFoto->getClientOriginalExtension();
-        $fileFoto->storeAs('public/foto_produk', $foto_produk);
+        $fileFoto->storeAs('/images', $foto_produk);
+
+
 
         $produk = new Produk;
         $produk->nama_produk = $request->nama_produk;

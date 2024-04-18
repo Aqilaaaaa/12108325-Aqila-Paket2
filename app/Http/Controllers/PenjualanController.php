@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PenjualanExport;
 use App\Models\DetailPenjualan;
 use App\Models\Pelanggan;
 use App\Models\Penjualan;
@@ -9,6 +10,8 @@ use App\Models\Produk;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class PenjualanController extends Controller
 {
@@ -178,4 +181,9 @@ class PenjualanController extends Controller
         
         return view('penjualan.detailPrint');
     }
+
+    public function penjualan_excel()
+	{
+		return Excel::download(new PenjualanExport, 'penjualan.xlsx');
+	}
 }

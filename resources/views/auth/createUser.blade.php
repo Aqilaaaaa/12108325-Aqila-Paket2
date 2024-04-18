@@ -24,7 +24,7 @@
 
                 <div class="input-box">
                     <label>Role</label>
-                    <select name="role" class="input-box text-white">
+                    <select name="role" class="input-box text-black">
                         <option value="kasir">Kasir</option>
                         <option value="admin">Admin</option>
                     </select>

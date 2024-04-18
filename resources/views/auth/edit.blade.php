@@ -4,8 +4,8 @@
     <section class="container">
         <div class="total">
             <br>
-            <h4 class="fw-bold text-break mt-4 mx-3 text-white">Edit Account User</h4>
-            <hr class="text-white">
+            <h4 class="fw-bold text-break mt-4 mx-3 text-black">Edit Account User</h4>
+            <hr class="text-black">
         </div>
         <form action="{{ route('edit.store', $user['id'])}}" class="form" method="POST" enctype="multipart/form-data">
             @csrf
@@ -29,7 +29,7 @@
 
                 <div class="input-box">
                     <label>Role</label>
-                    <select name="role" class="input-box text-white">
+                    <select name="role" class="input-box text-black">
                         <option value="kasir" {{ old('role', $user->role) == 'kasir' ? 'selected' :  ''}}>Kasir</option>
                         <option value="admin" {{ old('role', $user->role) == 'admin' ? 'selected' :  ''}}>Admin</option>
                     </select>

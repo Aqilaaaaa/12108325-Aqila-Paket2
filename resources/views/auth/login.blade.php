@@ -27,7 +27,7 @@
 <body>
 
     <div class="container d-flex justify-content-center align-items-center mt-5">
-        <form method="POST" action="" class="card py-4 px-4" style="background-color: rgba(0, 0, 0, 0.115)">
+        <form method="POST" action="" class="card py-4 px-4" style="background-color:">
             @csrf
             <div class="text-center logo">
             </div>

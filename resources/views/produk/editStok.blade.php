@@ -4,8 +4,8 @@
     <section class="container">
         <div class="total">
             <br>
-            <h4 class="fw-bold text-break mt-4 mx-3 text-white">Update Stok</h4>
-            <hr class="text-white">
+            <h4 class="fw-bold text-break mt-4 mx-3 text-black">Update Stok</h4>
+            <hr class="text-black">
         </div>
         <form action="{{ route('updateStok', $produk->id)}}" class="form" method="POST">
             @csrf

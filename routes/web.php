@@ -4,7 +4,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\ProdukController;
-use App\Models\Penjualan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +31,10 @@ Route::middleware(['auth'])->group(function (){
     Route::get('/penjualan', [PenjualanController::class, 'index']);
     Route::get('/detail', [PenjualanController::class, 'getAllPenjualanDetail']);
     Route::get('/penjualan/{id}/download-pdf', [PenjualanController::class, 'downloadPDF']);
+
+    
+    Route::get('/penjualan_excel', [PenjualanController::class,'penjualan_excel'])->name('penjualan.excel');
+
     
     Route::middleware(['isAdmin'])->group(function (){
         Route::get('/addProduk', [ProdukController::class, 'addIndex']);
@@ -48,7 +51,8 @@ Route::middleware(['auth'])->group(function (){
         Route::patch('/updateUser/{id}', [AuthController::class, 'update'])->name('edit.store');
         Route::delete('/deleteUser/{id}', [AuthController::class, 'delete']);
         Route::get('/lihatDetail/{id}', [PenjualanController::class, 'detail']);
-        
+        Route::get('/penjualan_excel', [PenjualanController::class,'penjualan_excel'])->name('penjualan.excel');
+
     });
     
     Route::middleware(['isKasir'])->group(function (){
@@ -58,7 +62,8 @@ Route::middleware(['auth'])->group(function (){
         Route::get('/detailPrint', [PenjualanController::class, 'detailPrint']);
         Route::get('/pelanggan', [PelangganController::class, 'indexPelanggan']);
         Route::post('/pelanggan', [PelangganController::class, 'createPelanggan'])->name('pelanggan');
-        
+        Route::get('/penjualan_excel', [PenjualanController::class,'penjualan_excel'])->name('penjualan.excel');
+
     });
 });
 

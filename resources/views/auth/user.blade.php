@@ -4,8 +4,8 @@
 <div class="gam mx-5">
     <div class="total">
         <br>
-        <h4 class="fw-bold text-break mt-4 mx-3 text-white">Akun User</h4>
-        <hr class="text-white">
+        <h4 class="fw-bold text-break mt-4 mx-3 text-black">Akun User</h4>
+        <hr class="text-black">
     </div>
         <div class="icons" style="display: flex; justify-content: flex-end;">
             <a href="/createUser" class="text-decoration-none">
@@ -13,27 +13,27 @@
             </a>
         </div>
     <br>
-    <table class="table text-white table-striped table-bordered ">
+    <table class="table text-black table-striped table-bordered ">
         <tr>
-            <td class="text-white">No</td>
-            <td class="text-white">Nama</td>
-            <td class="text-white">Email</td>
-            <td class="text-white">Role</td>
-            <td class="text-white">Action</td>
+            <td class="text-black">No</td>
+            <td class="text-black">Nama</td>
+            <td class="text-black">Email</td>
+            <td class="text-black">Role</td>
+            <td class="text-black">Action</td>
         </tr>
         
         @foreach ($user as $index => $item)
             <tr class="table-rows">
-                <td class="text-white"> {{ $index +1 }}</td>
-                <td class="text-white">{{ $item->nama}}</td>
-                <td class="text-white">{{ $item->email}}</td>
-                <td class="text-white">{{ $item->role}}</td>
-                <td class="d-flex gap-2 text-white">
+                <td class="text-black"> {{ $index +1 }}</td>
+                <td class="text-black">{{ $item->nama}}</td>
+                <td class="text-black">{{ $item->email}}</td>
+                <td class="text-black">{{ $item->role}}</td>
+                <td class="d-flex gap-2 text-black">
                     <a href="{{route('editUser', $item['id'])}}" class="btn btn-warning">Edit</a>
                     <form action="/deleteUser/{{ $item['id'] }}" method="POST">
                        @csrf
                        @method('delete')
-                         <button type="submit" class="btn btn-danger text-white me-2">Hapus</button>
+                         <button type="submit" class="btn btn-danger text-black me-2">Hapus</button>
                      </form>
                 </td>
             </tr>
